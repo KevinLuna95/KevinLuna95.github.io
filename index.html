@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Coliseum Events — Eventos y talleres</title>
-  <meta name="description" content="Descubre próximos eventos, talleres y charlas. Reserva tu plaza en minutos." />
+  <title>EVENTOS — Producción y organización de eventos para organizaciones</title>
+  <meta name="description" content="Diseñamos, organizamos y producimos eventos para empresas e instituciones: congresos, jornadas, formaciones, lanzamientos y eventos híbridos." />
   <style>
     :root{
       --bg:#0b1220;
@@ -41,7 +41,8 @@
     }
     .brand{
       display:flex; align-items:center; gap:10px; text-decoration:none;
-      font-weight:700; letter-spacing:.2px;
+      font-weight:800; letter-spacing:.5px;
+      text-transform:uppercase;
     }
     .logo{
       width:34px; height:34px; border-radius:12px;
@@ -52,20 +53,20 @@
     .navlinks a{
       text-decoration:none; color:var(--muted);
       padding:8px 10px; border-radius:999px;
+      font-weight:600;
     }
     .navlinks a:hover{color:var(--text); background:rgba(255,255,255,.06)}
     .cta{
       display:inline-flex; align-items:center; justify-content:center;
       background:linear-gradient(135deg, var(--brand), var(--brand2));
       color:#071021;
-      font-weight:700;
+      font-weight:800;
       padding:10px 14px;
       border-radius:999px;
       text-decoration:none;
       box-shadow: var(--shadow);
       white-space:nowrap;
     }
-
     .hero{
       display:grid;
       grid-template-columns: 1.2fr .8fr;
@@ -103,6 +104,7 @@
       text-decoration:none;
       color:var(--text);
       background:rgba(255,255,255,.04);
+      font-weight:700;
     }
     .ghost:hover{background:rgba(255,255,255,.08)}
     .stats{
@@ -148,20 +150,6 @@
     }
     .sectionHead h2{margin:0; font-size:22px}
     .sectionHead p{margin:0; color:var(--muted)}
-    .filters{
-      display:flex; gap:10px; flex-wrap:wrap;
-    }
-    .chip{
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.04);
-      color:var(--muted);
-      padding:8px 10px;
-      border-radius:999px;
-      font-size:14px;
-      text-decoration:none;
-    }
-    .chip:hover{color:var(--text); background:rgba(255,255,255,.08)}
-
     .grid{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
@@ -174,10 +162,10 @@
       box-shadow: var(--shadow);
       overflow:hidden;
       display:flex; flex-direction:column;
-      min-height: 280px;
+      min-height: 260px;
     }
     .thumb{
-      height:120px;
+      height:110px;
       background:
         radial-gradient(500px 180px at 20% 50%, rgba(58,163,255,.35), transparent 60%),
         radial-gradient(480px 180px at 80% 40%, rgba(56,230,193,.25), transparent 55%),
@@ -195,6 +183,7 @@
       background:rgba(255,255,255,.03);
       padding:4px 8px;
       border-radius:999px;
+      font-weight:600;
     }
     .title{margin:0; font-size:18px}
     .desc{margin:0; color:var(--muted); font-size:14px}
@@ -205,7 +194,6 @@
       background:rgba(255,255,255,.02);
       gap:10px;
     }
-    .price{font-weight:700}
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding:10px 12px;
@@ -213,7 +201,7 @@
       border:1px solid var(--border);
       background:rgba(255,255,255,.05);
       text-decoration:none;
-      font-weight:600;
+      font-weight:700;
       white-space:nowrap;
     }
     .btn:hover{background:rgba(255,255,255,.09)}
@@ -250,9 +238,31 @@
       background:rgba(58,163,255,.16);
       border:1px solid rgba(58,163,255,.35);
       display:flex; align-items:center; justify-content:center;
-      font-weight:800;
+      font-weight:900;
       flex:0 0 auto;
     }
+
+    /* Mini tabla “paquetes” */
+    table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      margin-top:12px;
+      overflow:hidden;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.02);
+    }
+    th, td{
+      padding:12px;
+      border-bottom:1px solid var(--border);
+      text-align:left;
+      vertical-align:top;
+      font-size:14px;
+    }
+    th{color:var(--text)}
+    td{color:var(--muted)}
+    tr:last-child td{border-bottom:none}
 
     details{
       border:1px solid var(--border);
@@ -261,12 +271,12 @@
       padding:12px 14px;
     }
     details + details{margin-top:10px}
-    summary{cursor:pointer; font-weight:700}
+    summary{cursor:pointer; font-weight:800}
     details p{margin:10px 0 0; color:var(--muted)}
 
     form{display:grid; gap:10px; margin-top:12px}
     label{font-size:13px; color:var(--muted)}
-    input, textarea{
+    input, select, textarea{
       width:100%;
       padding:12px 12px;
       border-radius:14px;
@@ -277,6 +287,7 @@
     }
     textarea{min-height:110px; resize:vertical}
     .formRow{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+
     footer{
       margin-top:26px;
       padding:22px 0 30px;
@@ -308,15 +319,16 @@
     <header class="nav" role="banner">
       <a class="brand" href="#inicio" aria-label="Inicio">
         <span class="logo" aria-hidden="true"></span>
-        <span>Coliseum Events</span>
+        <span>EVENTOS</span>
       </a>
 
       <nav class="navlinks" aria-label="Navegación principal">
-        <a href="#eventos">Eventos</a>
-        <a href="#como-funciona">Cómo funciona</a>
-        <a href="#faq">FAQ</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#sectores">Sectores</a>
+        <a href="#paquetes">Paquetes</a>
+        <a href="#casos">Casos</a>
         <a href="#contacto">Contacto</a>
-        <a class="cta" href="#eventos">Ver próximos</a>
+        <a class="cta" href="#contacto">Pedir propuesta</a>
       </nav>
     </header>
 
@@ -324,322 +336,402 @@
     <main id="inicio" class="hero" role="main">
       <section class="heroCard heroMain" aria-label="Presentación">
         <div class="heroMain">
-          <span class="kicker">📍 Barcelona y online · Reservas rápidas · Plazas limitadas</span>
-          <h1>Eventos que te aportan valor, sin perder tiempo.</h1>
+          <span class="kicker">🎯 B2B · End-to-end · Presencial / Online / Híbrido</span>
+          <h1>Organizamos eventos para organizaciones que necesitan resultados.</h1>
           <p class="sub">
-            Talleres, charlas y experiencias para aprender, conectar y mejorar. 
-            Encuentra tu próximo evento y reserva en minutos.
+            Desde la idea hasta la ejecución: producción, ponentes, inscripción, comunicación,
+            técnica, streaming y reporting. Tú te enfocas en el objetivo; nosotros en el evento.
           </p>
 
           <div class="heroActions">
-            <a class="cta" href="#eventos">Explorar eventos</a>
-            <a class="ghost" href="#contacto">Proponer un evento</a>
+            <a class="cta" href="#contacto">Solicitar presupuesto</a>
+            <a class="ghost" href="#paquetes">Ver paquetes</a>
           </div>
 
-          <div class="stats" aria-label="Estadísticas">
+          <div class="stats" aria-label="Indicadores">
             <div class="stat">
-              <b>+120</b><span>eventos realizados</span>
+              <b>Planificación</b><span>cronograma, riesgos, proveedores</span>
             </div>
             <div class="stat">
-              <b>4,8/5</b><span>valoración media</span>
+              <b>Producción</b><span>montaje, técnica, coordinación</span>
             </div>
             <div class="stat">
-              <b>+6.000</b><span>asistentes</span>
+              <b>Impacto</b><span>captación, NPS, leads y métricas</span>
             </div>
           </div>
         </div>
       </section>
 
-      <aside class="heroCard heroSide" aria-label="Highlights">
+      <aside class="heroCard heroSide" aria-label="Propuesta de valor">
         <div class="badge">
           <span class="dot" aria-hidden="true"></span>
           <div>
-            <b>Recordatorio por email</b>
-            <p>Te enviamos la info clave y un aviso 24h antes.</p>
+            <b>Eventos sin fricción</b>
+            <p>Un único equipo responsable de principio a fin.</p>
           </div>
         </div>
         <div class="badge">
           <span class="dot" aria-hidden="true"></span>
           <div>
-            <b>Entradas digitales</b>
-            <p>Acceso fácil desde el móvil (QR/confirmación).</p>
+            <b>Asistencia y registro</b>
+            <p>Landing, formularios, QR, confirmaciones y recordatorios.</p>
           </div>
         </div>
         <div class="badge">
           <span class="dot" aria-hidden="true"></span>
           <div>
-            <b>Eventos presenciales y online</b>
-            <p>Elige formato: sala, streaming o híbrido.</p>
+            <b>Streaming y técnica</b>
+            <p>Sonido, iluminación, realización, emisión y grabación.</p>
           </div>
         </div>
         <div class="badge">
           <span class="dot" aria-hidden="true"></span>
           <div>
-            <b>Organiza con nosotros</b>
-            <p>Si tienes una idea, la aterrizamos y la promocionamos.</p>
+            <b>Reporting</b>
+            <p>KPIs, encuestas, aprendizajes y próximos pasos.</p>
           </div>
         </div>
       </aside>
     </main>
 
-    <!-- EVENTOS -->
-    <section id="eventos" class="section" aria-label="Próximos eventos">
+    <!-- SERVICIOS -->
+    <section id="servicios" class="section" aria-label="Servicios">
       <div class="sectionHead">
         <div>
-          <h2>Próximos eventos</h2>
-          <p>Selecciona un tipo y reserva tu plaza.</p>
-        </div>
-        <div class="filters" aria-label="Filtros (visual)">
-          <a class="chip" href="#eventos">Todos</a>
-          <a class="chip" href="#eventos">Taller</a>
-          <a class="chip" href="#eventos">Charla</a>
-          <a class="chip" href="#eventos">Online</a>
-          <a class="chip" href="#eventos">Networking</a>
+          <h2>Servicios</h2>
+          <p>Modular o end-to-end, según tu necesidad.</p>
         </div>
       </div>
 
       <div class="grid" role="list">
-        <!-- Card 1 -->
-        <article class="card" role="listitem" aria-label="Evento 1">
+        <article class="card" role="listitem">
           <div class="thumb" aria-hidden="true"></div>
           <div class="content">
-            <div class="meta">
-              <span class="tag">Taller</span>
-              <span class="tag">Presencial</span>
-              <span class="tag">🗓 14 Mar · 19:00</span>
-            </div>
-            <h3 class="title">Optimiza tu energía diaria (hábitos realistas)</h3>
-            <p class="desc">Un taller práctico para diseñar una rutina sostenible (sin “modo espartano”).</p>
+            <div class="meta"><span class="tag">Estrategia</span><span class="tag">Plan</span></div>
+            <h3 class="title">Diseño del evento</h3>
+            <p class="desc">Objetivo, público, formato, agenda, ponentes, presupuesto y calendario.</p>
           </div>
           <div class="cardFoot">
-            <span class="price">19 €</span>
-            <a class="btn btnPrimary" href="#contacto">Reservar</a>
+            <span class="small">Kick-off + roadmap</span>
+            <a class="btn btnPrimary" href="#contacto">Quiero esto</a>
           </div>
         </article>
 
-        <!-- Card 2 -->
-        <article class="card" role="listitem" aria-label="Evento 2">
+        <article class="card" role="listitem">
           <div class="thumb" aria-hidden="true"></div>
           <div class="content">
-            <div class="meta">
-              <span class="tag">Charla</span>
-              <span class="tag">Online</span>
-              <span class="tag">🗓 20 Mar · 18:30</span>
-            </div>
-            <h3 class="title">Mitos y realidad sobre suplementación</h3>
-            <p class="desc">Aprende a leer etiquetas, evitar humo y decidir con criterio.</p>
+            <div class="meta"><span class="tag">Producción</span><span class="tag">On-site</span></div>
+            <h3 class="title">Producción y coordinación</h3>
+            <p class="desc">Proveedores, venue, montaje, señalética, timings y coordinación en sala.</p>
           </div>
           <div class="cardFoot">
-            <span class="price">Gratis</span>
-            <a class="btn btnPrimary" href="#contacto">Apuntarme</a>
+            <span class="small">Plan B incluido</span>
+            <a class="btn" href="#contacto">Pedir propuesta</a>
           </div>
         </article>
 
-        <!-- Card 3 -->
-        <article class="card" role="listitem" aria-label="Evento 3">
+        <article class="card" role="listitem">
           <div class="thumb" aria-hidden="true"></div>
           <div class="content">
-            <div class="meta">
-              <span class="tag">Networking</span>
-              <span class="tag">Presencial</span>
-              <span class="tag">🗓 28 Mar · 20:00</span>
-            </div>
-            <h3 class="title">Encuentro: salud, tech y emprendimiento</h3>
-            <p class="desc">Conecta con gente afín y sal con ideas accionables (y contactos).</p>
+            <div class="meta"><span class="tag">Tech</span><span class="tag">Streaming</span></div>
+            <h3 class="title">Técnica & híbrido</h3>
+            <p class="desc">Streaming, realización, sonido/iluminación, grabación y soporte remoto.</p>
           </div>
           <div class="cardFoot">
-            <span class="price">12 €</span>
-            <a class="btn" href="#contacto">Más info</a>
+            <span class="small">Calidad pro</span>
+            <a class="btn btnPrimary" href="#contacto">Quiero calidad</a>
           </div>
         </article>
 
-        <!-- Card 4 -->
-        <article class="card" role="listitem" aria-label="Evento 4">
+        <article class="card" role="listitem">
           <div class="thumb" aria-hidden="true"></div>
           <div class="content">
-            <div class="meta">
-              <span class="tag">Taller</span>
-              <span class="tag">Online</span>
-              <span class="tag">🗓 03 Abr · 19:30</span>
-            </div>
-            <h3 class="title">Planificación semanal sin estrés</h3>
-            <p class="desc">Sistema simple: prioriza, agenda, ejecuta y revisa sin saturarte.</p>
+            <div class="meta"><span class="tag">Marketing</span><span class="tag">Leads</span></div>
+            <h3 class="title">Landing & inscripción</h3>
+            <p class="desc">Página del evento, formularios, emails, QR, control de aforo y check-in.</p>
           </div>
           <div class="cardFoot">
-            <span class="price">15 €</span>
-            <a class="btn btnPrimary" href="#contacto">Reservar</a>
+            <span class="small">Automatizado</span>
+            <a class="btn" href="#contacto">Activarlo</a>
           </div>
         </article>
 
-        <!-- Card 5 -->
-        <article class="card" role="listitem" aria-label="Evento 5">
+        <article class="card" role="listitem">
           <div class="thumb" aria-hidden="true"></div>
           <div class="content">
-            <div class="meta">
-              <span class="tag">Charla</span>
-              <span class="tag">Presencial</span>
-              <span class="tag">🗓 10 Abr · 18:00</span>
-            </div>
-            <h3 class="title">Dormir mejor: estrategias con base científica</h3>
-            <p class="desc">Luz, cafeína, rutina y entorno: los 20% que dan el 80%.</p>
+            <div class="meta"><span class="tag">Contenido</span><span class="tag">Marca</span></div>
+            <h3 class="title">Guion, ponentes y dinamización</h3>
+            <p class="desc">Moderación, guion, timing, preguntas, dinámica y experiencia del asistente.</p>
           </div>
           <div class="cardFoot">
-            <span class="price">9 €</span>
-            <a class="btn" href="#contacto">Quiero plaza</a>
+            <span class="small">Engagement</span>
+            <a class="btn btnPrimary" href="#contacto">Me interesa</a>
           </div>
         </article>
 
-        <!-- Card 6 -->
-        <article class="card" role="listitem" aria-label="Evento 6">
+        <article class="card" role="listitem">
           <div class="thumb" aria-hidden="true"></div>
           <div class="content">
-            <div class="meta">
-              <span class="tag">Experiencia</span>
-              <span class="tag">Híbrido</span>
-              <span class="tag">🗓 25 Abr · 17:00</span>
-            </div>
-            <h3 class="title">Sesión guiada: reset mental (60 min)</h3>
-            <p class="desc">Un formato corto para bajar revoluciones y salir con claridad.</p>
+            <div class="meta"><span class="tag">KPIs</span><span class="tag">Post</span></div>
+            <h3 class="title">Encuestas & reporting</h3>
+            <p class="desc">NPS, satisfacción, asistentes, leads, coste/lead y recomendaciones.</p>
           </div>
           <div class="cardFoot">
-            <span class="price">18 €</span>
-            <a class="btn btnPrimary" href="#contacto">Reservar</a>
+            <span class="small">Aprendizaje</span>
+            <a class="btn" href="#contacto">Quiero métricas</a>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- CÓMO FUNCIONA -->
-    <section id="como-funciona" class="section" aria-label="Cómo funciona">
+    <!-- SECTORES -->
+    <section id="sectores" class="section" aria-label="Sectores">
       <div class="twoCol">
         <div class="panel">
-          <h2 style="margin:0 0 10px;">Cómo funciona</h2>
-          <p>Un flujo simple para que no pierdas tiempo:</p>
-          <div class="steps" aria-label="Pasos">
-            <div class="step">
-              <div class="num">1</div>
-              <div>
-                <b>Explora</b>
-                <p class="small" style="margin:2px 0 0; color:var(--muted);">Revisa fechas, formato y temática.</p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="num">2</div>
-              <div>
-                <b>Reserva</b>
-                <p class="small" style="margin:2px 0 0; color:var(--muted);">Déjanos tu email y te confirmamos.</p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="num">3</div>
-              <div>
-                <b>Asiste</b>
-                <p class="small" style="margin:2px 0 0; color:var(--muted);">Te enviamos acceso/ubicación y recordatorio.</p>
-              </div>
-            </div>
+          <h2 style="margin:0 0 10px;">Sectores habituales</h2>
+          <p>Nos adaptamos al contexto, compliance y tono de cada organización.</p>
+          <div class="steps" aria-label="Sectores">
+            <div class="step"><div class="num">✓</div><div><b>Salud</b><p class="small" style="margin:2px 0 0; color:var(--muted);">Jornadas, formación, divulgación, congresos.</p></div></div>
+            <div class="step"><div class="num">✓</div><div><b>Corporativo</b><p class="small" style="margin:2px 0 0; color:var(--muted);">Convenciones, kick-offs, eventos internos.</p></div></div>
+            <div class="step"><div class="num">✓</div><div><b>Instituciones</b><p class="small" style="margin:2px 0 0; color:var(--muted);">Actos, jornadas, premios, mesas redondas.</p></div></div>
+            <div class="step"><div class="num">✓</div><div><b>Tech</b><p class="small" style="margin:2px 0 0; color:var(--muted);">Lanzamientos, meetups, demos, webinars.</p></div></div>
           </div>
         </div>
 
         <div class="panel">
-          <h3>¿Quieres organizar un evento?</h3>
+          <h3>Tu evento, tu objetivo</h3>
           <p>
-            Si tienes una charla, taller o experiencia, cuéntanos la idea: te ayudamos con formato,
-            calendario, landing y difusión.
+            ¿Captación? ¿Branding? ¿Formación? ¿Relación con partners? 
+            Ajustamos formato y KPIs para que el evento “devuelva” valor.
           </p>
           <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn btnPrimary" href="#contacto">Contactar</a>
-            <a class="btn" href="#faq">Ver preguntas frecuentes</a>
+            <a class="btn btnPrimary" href="#contacto">Cuéntame el objetivo</a>
+            <a class="btn" href="#casos">Ver casos</a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- PAQUETES -->
+    <section id="paquetes" class="section" aria-label="Paquetes">
+      <div class="sectionHead">
+        <div>
+          <h2>Paquetes orientativos</h2>
+          <p>Para que tengas un marco rápido (se ajusta según alcance).</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <table aria-label="Tabla de paquetes">
+          <thead>
+            <tr>
+              <th>Paquete</th>
+              <th>Ideal para</th>
+              <th>Incluye</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Base</b></td>
+              <td>Evento pequeño / 30–80 asistentes</td>
+              <td>Planificación, coordinación, checklists, soporte en sala (sin técnica avanzada).</td>
+            </tr>
+            <tr>
+              <td><b>Pro</b></td>
+              <td>Jornadas / 80–250 asistentes</td>
+              <td>Producción completa, proveedores, registro/QR, señalética, coordinación on-site.</td>
+            </tr>
+            <tr>
+              <td><b>Híbrido</b></td>
+              <td>Presencial + streaming</td>
+              <td>Realización, sonido, iluminación, plataforma, grabación, soporte remoto y métricas.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn btnPrimary" href="#contacto">Pedir propuesta cerrada</a>
+          <a class="btn" href="#contacto">Comparar opciones</a>
+        </div>
+        <p class="small" style="margin:12px 0 0; color:var(--muted);">
+          Nota: esto es orientativo. El precio final depende de ciudad, venue, técnica, número de ponentes, y duración.
+        </p>
+      </div>
+    </section>
+
+    <!-- CASOS -->
+    <section id="casos" class="section" aria-label="Casos de ejemplo">
+      <div class="sectionHead">
+        <div>
+          <h2>Casos (ejemplo)</h2>
+          <p>Textos de muestra que puedes sustituir por casos reales.</p>
+        </div>
+      </div>
+
+      <div class="grid" role="list">
+        <article class="card" role="listitem">
+          <div class="thumb" aria-hidden="true"></div>
+          <div class="content">
+            <div class="meta"><span class="tag">Institución</span><span class="tag">Jornada</span></div>
+            <h3 class="title">Jornada anual (200 asistentes)</h3>
+            <p class="desc">Registro + acreditación QR, coordinación de agenda y ponentes, y encuesta final (NPS).</p>
+          </div>
+          <div class="cardFoot">
+            <span class="small">Entrega: informe KPIs</span>
+            <a class="btn" href="#contacto">Quiero algo así</a>
+          </div>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="thumb" aria-hidden="true"></div>
+          <div class="content">
+            <div class="meta"><span class="tag">Empresa</span><span class="tag">Kick-off</span></div>
+            <h3 class="title">Kick-off interno (híbrido)</h3>
+            <p class="desc">Producción en sala + emisión privada para equipos remotos, grabación y highlights.</p>
+          </div>
+          <div class="cardFoot">
+            <span class="small">Control total</span>
+            <a class="btn btnPrimary" href="#contacto">Pedir propuesta</a>
+          </div>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="thumb" aria-hidden="true"></div>
+          <div class="content">
+            <div class="meta"><span class="tag">Tech</span><span class="tag">Webinar</span></div>
+            <h3 class="title">Ciclo de webinars (captación)</h3>
+            <p class="desc">Landing + automatización de emails + emisión + métricas de asistencia y leads.</p>
+          </div>
+          <div class="cardFoot">
+            <span class="small">Orientado a leads</span>
+            <a class="btn" href="#contacto">Me interesa</a>
+          </div>
+        </article>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="section" aria-label="Preguntas frecuentes">
+    <section class="section" aria-label="Preguntas frecuentes">
       <div class="sectionHead">
         <div>
           <h2>FAQ</h2>
-          <p>Respuestas rápidas para lo típico.</p>
+          <p>Lo que suelen preguntar las organizaciones.</p>
         </div>
       </div>
 
       <details>
-        <summary>¿Cómo reservo una plaza?</summary>
-        <p>Usa el botón “Reservar” de cualquier evento o escribe en el formulario de contacto indicando el evento y tu email.</p>
+        <summary>¿Con cuánta antelación recomendáis planificar?</summary>
+        <p>Depende del tamaño: pequeño (2–4 semanas), medio (4–8), grande (8–12+). Podemos hacerlo “fast-track” si hay urgencia.</p>
       </details>
 
       <details>
-        <summary>¿Hay devolución si no puedo asistir?</summary>
-        <p>Depende del evento. Normalmente permitimos cambio de fecha o reembolso hasta 48h antes (indícalo en la descripción del evento).</p>
+        <summary>¿Podéis trabajar con nuestros proveedores?</summary>
+        <p>Sí. Nos integramos con proveedores internos o externos y nos encargamos de coordinación y control de calidad.</p>
       </details>
 
       <details>
-        <summary>¿Recibiré un recordatorio?</summary>
-        <p>Sí, enviamos un recordatorio 24h antes con ubicación (presencial) o enlace de acceso (online).</p>
+        <summary>¿Qué entregables incluís?</summary>
+        <p>Timeline, checklist, guion técnico, plan de riesgos, y post-evento: reporte de KPIs + recomendaciones.</p>
       </details>
 
       <details>
-        <summary>¿Puedo proponer una colaboración?</summary>
-        <p>Claro. Escríbenos con el tema, el formato y la audiencia objetivo.</p>
+        <summary>¿Podéis hacer eventos híbridos sin líos?</summary>
+        <p>Sí: definimos plataforma, pruebas técnicas, realización, contingencias y soporte durante la emisión.</p>
       </details>
     </section>
 
     <!-- CONTACTO -->
-    <section id="contacto" class="section" aria-label="Contacto">
+    <section id="contacto" class="section" aria-label="Contacto B2B">
       <div class="twoCol">
         <div class="panel">
-          <h2 style="margin:0 0 10px;">Contacto</h2>
-          <p>¿Quieres reservar, pedir info o proponer un evento? Escríbenos.</p>
+          <h2 style="margin:0 0 10px;">Pide propuesta</h2>
+          <p>Cuéntanos el objetivo y te respondemos con un enfoque + alcance + estimación.</p>
 
           <form action="#" method="post" aria-label="Formulario de contacto">
             <div class="formRow">
               <div>
-                <label for="nombre">Nombre</label>
-                <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required />
+                <label for="org">Organización</label>
+                <input id="org" name="org" type="text" placeholder="Nombre de la organización" required />
               </div>
               <div>
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="tucorreo@ejemplo.com" required />
+                <label for="persona">Persona de contacto</label>
+                <input id="persona" name="persona" type="text" placeholder="Nombre y apellidos" required />
               </div>
             </div>
 
             <div class="formRow">
               <div>
-                <label for="tipo">Motivo</label>
-                <input id="tipo" name="tipo" type="text" placeholder="Reserva / Información / Propuesta" />
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="nombre@empresa.com" required />
               </div>
               <div>
-                <label for="evento">Evento (opcional)</label>
-                <input id="evento" name="evento" type="text" placeholder="Nombre del evento" />
+                <label for="tel">Teléfono (opcional)</label>
+                <input id="tel" name="tel" type="tel" placeholder="+34 ..." />
+              </div>
+            </div>
+
+            <div class="formRow">
+              <div>
+                <label for="tipo">Tipo de evento</label>
+                <select id="tipo" name="tipo" required>
+                  <option value="">Selecciona</option>
+                  <option>Jornada / Congreso</option>
+                  <option>Formación / Taller</option>
+                  <option>Kick-off interno</option>
+                  <option>Lanzamiento</option>
+                  <option>Webinar / Online</option>
+                  <option>Híbrido</option>
+                </select>
+              </div>
+              <div>
+                <label for="fecha">Fecha aproximada</label>
+                <input id="fecha" name="fecha" type="text" placeholder="Ej: abril 2026" />
+              </div>
+            </div>
+
+            <div class="formRow">
+              <div>
+                <label for="ciudad">Ciudad / formato</label>
+                <input id="ciudad" name="ciudad" type="text" placeholder="Ej: Barcelona / híbrido" />
+              </div>
+              <div>
+                <label for="aforo">Aforo estimado</label>
+                <input id="aforo" name="aforo" type="text" placeholder="Ej: 150" />
               </div>
             </div>
 
             <div>
-              <label for="mensaje">Mensaje</label>
-              <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos qué necesitas..." required></textarea>
+              <label for="mensaje">Objetivo y detalles</label>
+              <textarea id="mensaje" name="mensaje" placeholder="Objetivo del evento, público, duración, necesidades técnicas, etc." required></textarea>
             </div>
 
-            <button class="btn btnPrimary" type="submit">Enviar</button>
+            <button class="btn btnPrimary" type="submit">Enviar solicitud</button>
             <p class="small" style="margin:0; color:var(--muted);">
-              *Este formulario es una maqueta. Conéctalo a tu backend o a un servicio (Formspree, Netlify Forms, etc.).
+              *Maqueta: conecta este formulario a tu backend o a un servicio (Formspree, Netlify Forms, etc.).
             </p>
           </form>
         </div>
 
         <div class="panel">
-          <h3>Datos</h3>
-          <p style="margin-bottom:12px;">
-            <b>Email:</b> hola@tudominio.com<br/>
-            <b>Ubicación:</b> Barcelona (y online)<br/>
-            <b>Horario:</b> L–V · 10:00–18:00
-          </p>
+          <h3>Qué te devolveremos</h3>
+          <div class="steps" aria-label="Respuesta">
+            <div class="step"><div class="num">1</div><div><b>Enfoque</b><p class="small" style="margin:2px 0 0; color:var(--muted);">Formato, experiencia y agenda sugerida.</p></div></div>
+            <div class="step"><div class="num">2</div><div><b>Alcance</b><p class="small" style="margin:2px 0 0; color:var(--muted);">Qué incluye y qué no, por módulos.</p></div></div>
+            <div class="step"><div class="num">3</div><div><b>Estimación</b><p class="small" style="margin:2px 0 0; color:var(--muted);">Coste y calendario realista.</p></div></div>
+          </div>
+
           <div class="badge" style="margin-top:12px;">
             <span class="dot" aria-hidden="true"></span>
             <div>
-              <b>Tip</b>
-              <p>Si quieres, te lo convierto en plantilla multipágina (eventos.html, evento-detalle.html, etc.).</p>
+              <b>Tip para convertir más</b>
+              <p>Si añades testimonios reales + logos de clientes + 3 casos con métricas, esta landing despega.</p>
             </div>
           </div>
+
+          <p class="small" style="margin-top:12px; color:var(--muted);">
+            Email: hola@tudominio.com<br/>
+            Ubicación: Barcelona / España (y online)
+          </p>
         </div>
       </div>
     </section>
@@ -649,12 +741,12 @@
       <div class="foot">
         <div class="brand" style="gap:10px;">
           <span class="logo" aria-hidden="true"></span>
-          <span class="small">© <span id="year">2026</span> Coliseum Events</span>
+          <span class="small">© 2026 EVENTOS</span>
         </div>
         <div class="small">
-          <a href="#inicio" class="chip" style="text-decoration:none;">Subir</a>
-          <a href="#faq" class="chip" style="text-decoration:none;">FAQ</a>
-          <a href="#contacto" class="chip" style="text-decoration:none;">Contacto</a>
+          <a href="#inicio" class="btn" style="text-decoration:none;">Subir</a>
+          <a href="#servicios" class="btn" style="text-decoration:none;">Servicios</a>
+          <a href="#contacto" class="btn" style="text-decoration:none;">Contacto</a>
         </div>
       </div>
     </footer>
