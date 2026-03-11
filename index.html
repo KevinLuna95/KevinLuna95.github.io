@@ -1,112 +1,149 @@
+```html
 <!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>EVENTOS — Producción y organización de eventos para organizaciones</title>
-  <meta name="description" content="Diseñamos, organizamos y producimos eventos para empresas e instituciones: congresos, jornadas, formaciones, lanzamientos y eventos híbridos." />
+  <title>Agencia de Crecimiento Digital — RRSS como motor + estrategia 360</title>
+  <meta name="description" content="Agencia de crecimiento digital con foco en RRSS y apoyo estratégico 360: SEO, Ads, GEO, contenido, eventos y reporting orientado a resultados." />
+
   <style>
     :root{
-      --bg:#0b1220;
-      --card:#111a2e;
-      --muted:#8ea0c7;
-      --text:#eaf0ff;
-      --brand:#3aa3ff;
-      --brand2:#38e6c1;
-      --border:rgba(255,255,255,.10);
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius:18px;
-      --max:1100px;
+      /* Base (limpio + moderno) */
+      --bg:#0b1020;
+      --surface: rgba(255,255,255,.06);
+      --surface2: rgba(255,255,255,.09);
+      --text:#f4f6ff;
+      --muted: rgba(244,246,255,.72);
+      --border: rgba(255,255,255,.12);
+      --shadow: 0 18px 50px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1120px;
+
+      /* Acentos vibrantes (cohesionados) */
+      --a1:#7c3aed; /* violeta */
+      --a2:#06b6d4; /* cyan */
+      --a3:#22c55e; /* verde */
+      --a4:#fb7185; /* coral */
     }
+
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
-      background: radial-gradient(1000px 500px at 20% 0%, rgba(58,163,255,.18), transparent 60%),
-                  radial-gradient(900px 450px at 80% 10%, rgba(56,230,193,.14), transparent 55%),
-                  var(--bg);
       color:var(--text);
       line-height:1.45;
+      background:
+        radial-gradient(900px 520px at 14% 0%, rgba(124,58,237,.26), transparent 60%),
+        radial-gradient(820px 520px at 85% 10%, rgba(6,182,212,.22), transparent 55%),
+        radial-gradient(760px 480px at 35% 92%, rgba(34,197,94,.14), transparent 62%),
+        var(--bg);
     }
+
     a{color:inherit}
     .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    .pill{
+      display:inline-flex; gap:8px; align-items:center;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.05);
+      padding:6px 10px;
+      border-radius:999px;
+      color:var(--muted);
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+
+    /* NAV */
     .nav{
+      position:sticky;
+      top:12px;
+      z-index:30;
       display:flex; align-items:center; justify-content:space-between;
-      gap:16px;
+      gap:14px;
+      padding:10px 12px;
       border:1px solid var(--border);
       border-radius:999px;
-      padding:10px 14px;
-      background:rgba(17,26,46,.55);
-      backdrop-filter: blur(8px);
+      background:rgba(10,16,32,.55);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
     }
     .brand{
-      display:flex; align-items:center; gap:10px; text-decoration:none;
-      font-weight:800; letter-spacing:.5px;
+      display:flex; align-items:center; gap:10px;
+      text-decoration:none;
+      font-weight:900;
+      letter-spacing:.6px;
       text-transform:uppercase;
+      white-space:nowrap;
     }
     .logo{
       width:34px; height:34px; border-radius:12px;
-      background: linear-gradient(135deg, var(--brand), var(--brand2));
-      box-shadow: 0 10px 25px rgba(58,163,255,.25);
+      background: linear-gradient(135deg, var(--a1), var(--a2));
+      box-shadow: 0 18px 40px rgba(124,58,237,.22);
     }
-    .navlinks{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end}
+    .navlinks{display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; align-items:center}
     .navlinks a{
-      text-decoration:none; color:var(--muted);
-      padding:8px 10px; border-radius:999px;
-      font-weight:600;
+      text-decoration:none;
+      color:var(--muted);
+      padding:8px 10px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:14px;
     }
-    .navlinks a:hover{color:var(--text); background:rgba(255,255,255,.06)}
+    .navlinks a:hover{background:rgba(255,255,255,.06); color:var(--text)}
     .cta{
       display:inline-flex; align-items:center; justify-content:center;
-      background:linear-gradient(135deg, var(--brand), var(--brand2));
-      color:#071021;
-      font-weight:800;
       padding:10px 14px;
       border-radius:999px;
       text-decoration:none;
+      font-weight:900;
+      color:#071021;
+      background: linear-gradient(135deg, var(--a2), var(--a3));
       box-shadow: var(--shadow);
       white-space:nowrap;
     }
+    .cta:hover{filter:saturate(1.1) brightness(1.03)}
+    .ghost{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.05);
+      text-decoration:none;
+      font-weight:900;
+    }
+    .ghost:hover{background:rgba(255,255,255,.08)}
+
+    /* HERO */
     .hero{
+      margin-top:18px;
       display:grid;
       grid-template-columns: 1.2fr .8fr;
-      gap:22px;
-      margin-top:18px;
+      gap:18px;
       align-items:stretch;
     }
-    .heroCard{
+    .card{
       border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
       border-radius:var(--radius);
-      background:rgba(17,26,46,.55);
       box-shadow: var(--shadow);
       overflow:hidden;
     }
-    .heroMain{padding:26px}
-    .kicker{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
+    .heroMain{padding:28px}
+    h1{
+      margin:14px 0 10px;
+      font-size:46px;
+      line-height:1.03;
+      letter-spacing:-.6px;
+    }
+    .sub{
+      margin:0 0 16px;
       color:var(--muted);
-      font-size:14px;
-      padding:6px 10px;
-      border:1px solid var(--border);
-      border-radius:999px;
-      background:rgba(255,255,255,.04);
+      font-size:16px;
+      max-width: 52ch;
     }
-    h1{margin:14px 0 10px; font-size:44px; line-height:1.05}
-    .sub{color:var(--muted); font-size:16px; margin:0 0 18px}
-    .heroActions{display:flex; gap:12px; flex-wrap:wrap; margin-top:8px}
-    .ghost{
-      display:inline-flex; align-items:center; justify-content:center;
-      border:1px solid var(--border);
-      padding:10px 14px;
-      border-radius:999px;
-      text-decoration:none;
-      color:var(--text);
-      background:rgba(255,255,255,.04);
-      font-weight:700;
-    }
-    .ghost:hover{background:rgba(255,255,255,.08)}
+    .heroActions{display:flex; gap:12px; flex-wrap:wrap; margin-top:10px}
     .stats{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
@@ -115,84 +152,72 @@
     }
     .stat{
       border:1px solid var(--border);
-      background:rgba(255,255,255,.03);
+      background:rgba(255,255,255,.04);
       border-radius:16px;
       padding:12px;
     }
-    .stat b{display:block; font-size:18px}
-    .stat span{color:var(--muted); font-size:13px}
-
-    .heroSide{
-      padding:18px;
-      display:flex; flex-direction:column; gap:12px;
-    }
+    .stat b{display:block; font-size:16px}
+    .stat span{display:block; margin-top:2px; color:var(--muted); font-size:13px}
+    .heroSide{padding:18px; display:flex; flex-direction:column; gap:12px}
     .badge{
       display:flex; gap:10px; align-items:flex-start;
       border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
       border-radius:16px;
       padding:12px;
-      background:rgba(255,255,255,.03);
     }
     .dot{
       width:10px; height:10px; border-radius:999px;
-      background:linear-gradient(135deg,var(--brand),var(--brand2));
       margin-top:6px;
       flex:0 0 auto;
+      background: linear-gradient(135deg, var(--a4), var(--a2));
     }
+    .badge b{display:block; margin-bottom:2px}
     .badge p{margin:0; color:var(--muted); font-size:14px}
-    .badge b{display:block; margin-bottom:2px; color:var(--text)}
 
-    .section{margin-top:26px}
+    /* SECTIONS */
+    .section{margin-top:28px}
     .sectionHead{
       display:flex; align-items:flex-end; justify-content:space-between;
       gap:12px; flex-wrap:wrap;
       margin-bottom:14px;
     }
-    .sectionHead h2{margin:0; font-size:22px}
+    .sectionHead h2{margin:0; font-size:22px; letter-spacing:-.2px}
     .sectionHead p{margin:0; color:var(--muted)}
     .grid{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
-      gap:16px;
+      gap:14px;
     }
-    .card{
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      background:rgba(17,26,46,.55);
-      box-shadow: var(--shadow);
-      overflow:hidden;
+    .service{
       display:flex; flex-direction:column;
-      min-height: 260px;
+      min-height: 250px;
     }
     .thumb{
-      height:110px;
-      background:
-        radial-gradient(500px 180px at 20% 50%, rgba(58,163,255,.35), transparent 60%),
-        radial-gradient(480px 180px at 80% 40%, rgba(56,230,193,.25), transparent 55%),
-        rgba(255,255,255,.03);
+      height:92px;
       border-bottom:1px solid var(--border);
+      background:
+        radial-gradient(520px 180px at 18% 40%, rgba(124,58,237,.34), transparent 60%),
+        radial-gradient(520px 180px at 80% 40%, rgba(6,182,212,.28), transparent 55%),
+        rgba(255,255,255,.03);
     }
     .content{padding:16px; display:flex; flex-direction:column; gap:10px; flex:1}
-    .meta{
-      display:flex; gap:8px; flex-wrap:wrap;
-      color:var(--muted);
-      font-size:13px;
-    }
+    .meta{display:flex; gap:8px; flex-wrap:wrap; color:var(--muted); font-size:13px}
     .tag{
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.03);
       padding:4px 8px;
       border-radius:999px;
-      font-weight:600;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      font-weight:800;
     }
     .title{margin:0; font-size:18px}
     .desc{margin:0; color:var(--muted); font-size:14px}
     .cardFoot{
       padding:14px 16px;
       display:flex; align-items:center; justify-content:space-between;
-      border-top:1px solid var(--border);
-      background:rgba(255,255,255,.02);
       gap:10px;
+      border-top:1px solid var(--border);
+      background:rgba(255,255,255,.03);
     }
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
@@ -201,62 +226,57 @@
       border:1px solid var(--border);
       background:rgba(255,255,255,.05);
       text-decoration:none;
-      font-weight:700;
+      font-weight:900;
       white-space:nowrap;
     }
-    .btn:hover{background:rgba(255,255,255,.09)}
+    .btn:hover{background:rgba(255,255,255,.08)}
     .btnPrimary{
       border:none;
-      background:linear-gradient(135deg, var(--brand), var(--brand2));
       color:#071021;
+      background: linear-gradient(135deg, var(--a1), var(--a2));
     }
 
     .twoCol{
       display:grid;
       grid-template-columns: 1fr 1fr;
-      gap:16px;
+      gap:14px;
     }
-    .panel{
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      background:rgba(17,26,46,.55);
-      box-shadow: var(--shadow);
-      padding:18px;
-    }
-    .panel h3{margin:0 0 10px}
+    .panel{padding:18px}
+    .panel h3{margin:0 0 10px; font-size:18px}
     .panel p{margin:0; color:var(--muted)}
     .steps{display:grid; gap:10px; margin-top:12px}
     .step{
       display:flex; gap:10px;
       border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
       border-radius:16px;
       padding:12px;
-      background:rgba(255,255,255,.03);
     }
     .num{
-      width:28px; height:28px; border-radius:10px;
-      background:rgba(58,163,255,.16);
-      border:1px solid rgba(58,163,255,.35);
+      width:28px; height:28px;
+      border-radius:10px;
       display:flex; align-items:center; justify-content:center;
-      font-weight:900;
+      font-weight:1000;
+      color:#071021;
+      background: linear-gradient(135deg, var(--a2), var(--a3));
       flex:0 0 auto;
     }
 
-    /* Mini tabla “paquetes” */
+    /* Tabla paquetes */
     table{
       width:100%;
       border-collapse:separate;
       border-spacing:0;
-      margin-top:12px;
-      overflow:hidden;
       border-radius:16px;
+      overflow:hidden;
       border:1px solid var(--border);
-      background:rgba(255,255,255,.02);
+      background:rgba(255,255,255,.03);
+      margin-top:12px;
     }
     th, td{
+      text-align:left;
       padding:12px;
       border-bottom:1px solid var(--border);
-      text-align:left;
       vertical-align:top;
       font-size:14px;
     }
@@ -267,15 +287,15 @@
     details{
       border:1px solid var(--border);
       border-radius:16px;
-      background:rgba(255,255,255,.03);
+      background:rgba(255,255,255,.04);
       padding:12px 14px;
     }
     details + details{margin-top:10px}
-    summary{cursor:pointer; font-weight:800}
+    summary{cursor:pointer; font-weight:1000}
     details p{margin:10px 0 0; color:var(--muted)}
 
     form{display:grid; gap:10px; margin-top:12px}
-    label{font-size:13px; color:var(--muted)}
+    label{font-size:13px; color:var(--muted); font-weight:800}
     input, select, textarea{
       width:100%;
       padding:12px 12px;
@@ -289,26 +309,29 @@
     .formRow{display:grid; grid-template-columns:1fr 1fr; gap:10px}
 
     footer{
-      margin-top:26px;
+      margin-top:28px;
       padding:22px 0 30px;
       color:var(--muted);
       border-top:1px solid var(--border);
     }
     .foot{
-      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:center;
+      display:flex; justify-content:space-between; align-items:center;
+      gap:12px; flex-wrap:wrap;
     }
     .small{font-size:13px}
 
     @media (max-width: 920px){
       .hero{grid-template-columns: 1fr}
-      h1{font-size:38px}
+      h1{font-size:40px}
       .grid{grid-template-columns: 1fr 1fr}
+      .stats{grid-template-columns: 1fr 1fr}
     }
     @media (max-width: 640px){
       .grid{grid-template-columns: 1fr}
       .twoCol{grid-template-columns: 1fr}
       .formRow{grid-template-columns:1fr}
       h1{font-size:34px}
+      .stats{grid-template-columns: 1fr}
     }
   </style>
 </head>
@@ -319,196 +342,260 @@
     <header class="nav" role="banner">
       <a class="brand" href="#inicio" aria-label="Inicio">
         <span class="logo" aria-hidden="true"></span>
-        <span>EVENTOS</span>
+        <span>AGENCIA</span>
       </a>
 
       <nav class="navlinks" aria-label="Navegación principal">
         <a href="#servicios">Servicios</a>
-        <a href="#sectores">Sectores</a>
+        <a href="#ejecucion">Ejecución</a>
+        <a href="#entregables">Entregables</a>
         <a href="#paquetes">Paquetes</a>
-        <a href="#casos">Casos</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#faq">FAQ</a>
         <a class="cta" href="#contacto">Pedir propuesta</a>
       </nav>
     </header>
 
     <!-- HERO -->
     <main id="inicio" class="hero" role="main">
-      <section class="heroCard heroMain" aria-label="Presentación">
+      <section class="card heroMain" aria-label="Presentación">
         <div class="heroMain">
-          <span class="kicker">🎯 B2B · End-to-end · Presencial / Online / Híbrido</span>
-          <h1>Organizamos eventos para organizaciones que necesitan resultados.</h1>
+          <span class="pill">🚀 Crecimiento · RRSS como motor · Estrategia 360</span>
+          <h1>Hacemos crecer tu marca en redes con una estrategia conectada.</h1>
           <p class="sub">
-            Desde la idea hasta la ejecución: producción, ponentes, inscripción, comunicación,
-            técnica, streaming y reporting. Tú te enfocas en el objetivo; nosotros en el evento.
+            Social first, pero no “solo social”: unimos contenido, SEO, Ads, GEO y acciones de visibilidad
+            para que cada publicación empuje negocio.
           </p>
 
           <div class="heroActions">
-            <a class="cta" href="#contacto">Solicitar presupuesto</a>
+            <a class="cta" href="#contacto">Solicitar diagnóstico</a>
             <a class="ghost" href="#paquetes">Ver paquetes</a>
           </div>
 
           <div class="stats" aria-label="Indicadores">
-            <div class="stat">
-              <b>Planificación</b><span>cronograma, riesgos, proveedores</span>
-            </div>
-            <div class="stat">
-              <b>Producción</b><span>montaje, técnica, coordinación</span>
-            </div>
-            <div class="stat">
-              <b>Impacto</b><span>captación, NPS, leads y métricas</span>
-            </div>
+            <div class="stat"><b>Estrategia</b><span>posicionamiento, narrativa y plan</span></div>
+            <div class="stat"><b>Ejecución</b><span>contenido, campañas y operaciones</span></div>
+            <div class="stat"><b>Impacto</b><span>KPIs, aprendizajes y optimización</span></div>
           </div>
         </div>
       </section>
 
-      <aside class="heroCard heroSide" aria-label="Propuesta de valor">
+      <aside class="card heroSide" aria-label="Propuesta de valor">
         <div class="badge">
           <span class="dot" aria-hidden="true"></span>
-          <div>
-            <b>Eventos sin fricción</b>
-            <p>Un único equipo responsable de principio a fin.</p>
-          </div>
+          <div><b>RRSS con dirección</b><p>No publicamos por publicar: objetivos, embudo y calendario.</p></div>
         </div>
         <div class="badge">
           <span class="dot" aria-hidden="true"></span>
-          <div>
-            <b>Asistencia y registro</b>
-            <p>Landing, formularios, QR, confirmaciones y recordatorios.</p>
-          </div>
+          <div><b>360 de verdad</b><p>SEO, Ads, GEO y visibilidad conectados al contenido.</p></div>
         </div>
         <div class="badge">
           <span class="dot" aria-hidden="true"></span>
-          <div>
-            <b>Streaming y técnica</b>
-            <p>Sonido, iluminación, realización, emisión y grabación.</p>
-          </div>
+          <div><b>Creatividad que convierte</b><p>Ideas + formato + copy + edición: hecho para rendimiento.</p></div>
         </div>
         <div class="badge">
           <span class="dot" aria-hidden="true"></span>
-          <div>
-            <b>Reporting</b>
-            <p>KPIs, encuestas, aprendizajes y próximos pasos.</p>
-          </div>
+          <div><b>Reporting accionable</b><p>Lo que funciona, se escala. Lo que no, se corta.</p></div>
         </div>
       </aside>
     </main>
 
-    <!-- SERVICIOS -->
-    <section id="servicios" class="section" aria-label="Servicios">
+    <!-- SERVICIOS (Consultoría / asesoramiento) -->
+    <section id="servicios" class="section" aria-label="Servicios de consultoría">
       <div class="sectionHead">
         <div>
-          <h2>Servicios</h2>
-          <p>Modular o end-to-end, según tu necesidad.</p>
+          <h2>Servicios de consultoría / asesoramiento</h2>
+          <p>Sesiones, auditorías y dirección estratégica (tú ejecutas o lo hacemos nosotros).</p>
         </div>
       </div>
 
       <div class="grid" role="list">
-        <article class="card" role="listitem">
+        <article class="card service" role="listitem">
           <div class="thumb" aria-hidden="true"></div>
           <div class="content">
-            <div class="meta"><span class="tag">Estrategia</span><span class="tag">Plan</span></div>
-            <h3 class="title">Diseño del evento</h3>
-            <p class="desc">Objetivo, público, formato, agenda, ponentes, presupuesto y calendario.</p>
+            <div class="meta"><span class="tag">RRSS</span><span class="tag">Estrategia</span></div>
+            <h3 class="title">Asesoría en RRSS</h3>
+            <p class="desc">Posicionamiento, pilares de contenido, calendario, formatos, guías y métricas.</p>
           </div>
           <div class="cardFoot">
-            <span class="small">Kick-off + roadmap</span>
+            <span class="small">Diagnóstico + plan</span>
             <a class="btn btnPrimary" href="#contacto">Quiero esto</a>
           </div>
         </article>
 
-        <article class="card" role="listitem">
+        <article class="card service" role="listitem">
           <div class="thumb" aria-hidden="true"></div>
           <div class="content">
-            <div class="meta"><span class="tag">Producción</span><span class="tag">On-site</span></div>
-            <h3 class="title">Producción y coordinación</h3>
-            <p class="desc">Proveedores, venue, montaje, señalética, timings y coordinación en sala.</p>
+            <div class="meta"><span class="tag">SEO</span><span class="tag">Crecimiento</span></div>
+            <h3 class="title">Asesoría SEO</h3>
+            <p class="desc">Arquitectura, contenidos, intención de búsqueda, interlinking y priorización.</p>
           </div>
           <div class="cardFoot">
-            <span class="small">Plan B incluido</span>
+            <span class="small">Roadmap</span>
             <a class="btn" href="#contacto">Pedir propuesta</a>
           </div>
         </article>
 
-        <article class="card" role="listitem">
+        <article class="card service" role="listitem">
           <div class="thumb" aria-hidden="true"></div>
           <div class="content">
-            <div class="meta"><span class="tag">Tech</span><span class="tag">Streaming</span></div>
-            <h3 class="title">Técnica & híbrido</h3>
-            <p class="desc">Streaming, realización, sonido/iluminación, grabación y soporte remoto.</p>
+            <div class="meta"><span class="tag">Ads</span><span class="tag">Performance</span></div>
+            <h3 class="title">Asesoría Ads</h3>
+            <p class="desc">Estructura, creatividades, audiencias, tracking y mejora del coste por resultado.</p>
           </div>
           <div class="cardFoot">
-            <span class="small">Calidad pro</span>
-            <a class="btn btnPrimary" href="#contacto">Quiero calidad</a>
+            <span class="small">Quick wins</span>
+            <a class="btn btnPrimary" href="#contacto">Optimizar</a>
           </div>
         </article>
 
-        <article class="card" role="listitem">
+        <article class="card service" role="listitem">
           <div class="thumb" aria-hidden="true"></div>
           <div class="content">
-            <div class="meta"><span class="tag">Marketing</span><span class="tag">Leads</span></div>
-            <h3 class="title">Landing & inscripción</h3>
-            <p class="desc">Página del evento, formularios, emails, QR, control de aforo y check-in.</p>
+            <div class="meta"><span class="tag">GEO</span><span class="tag">Visibilidad</span></div>
+            <h3 class="title">Asesoría GEO</h3>
+            <p class="desc">Presencia local, Google Business Profile, reseñas, contenidos y acciones de mapa.</p>
           </div>
           <div class="cardFoot">
-            <span class="small">Automatizado</span>
+            <span class="small">Local growth</span>
             <a class="btn" href="#contacto">Activarlo</a>
           </div>
         </article>
 
-        <article class="card" role="listitem">
+        <article class="card service" role="listitem">
           <div class="thumb" aria-hidden="true"></div>
           <div class="content">
-            <div class="meta"><span class="tag">Contenido</span><span class="tag">Marca</span></div>
-            <h3 class="title">Guion, ponentes y dinamización</h3>
-            <p class="desc">Moderación, guion, timing, preguntas, dinámica y experiencia del asistente.</p>
+            <div class="meta"><span class="tag">Eventos</span><span class="tag">PR</span></div>
+            <h3 class="title">Asesoría de eventos</h3>
+            <p class="desc">Acciones de visibilidad: charlas, colaboraciones, lanzamientos y cobrandings.</p>
           </div>
           <div class="cardFoot">
-            <span class="small">Engagement</span>
-            <a class="btn btnPrimary" href="#contacto">Me interesa</a>
+            <span class="small">Plan de acción</span>
+            <a class="btn btnPrimary" href="#contacto">Lo quiero</a>
           </div>
         </article>
 
-        <article class="card" role="listitem">
+        <article class="card service" role="listitem">
           <div class="thumb" aria-hidden="true"></div>
           <div class="content">
-            <div class="meta"><span class="tag">KPIs</span><span class="tag">Post</span></div>
-            <h3 class="title">Encuestas & reporting</h3>
-            <p class="desc">NPS, satisfacción, asistentes, leads, coste/lead y recomendaciones.</p>
+            <div class="meta"><span class="tag">360</span><span class="tag">Dirección</span></div>
+            <h3 class="title">Consultoría integral</h3>
+            <p class="desc">Estrategia conectada: RRSS + SEO + Ads + GEO + visibilidad + reporting.</p>
           </div>
           <div class="cardFoot">
-            <span class="small">Aprendizaje</span>
-            <a class="btn" href="#contacto">Quiero métricas</a>
+            <span class="small">Dirección estratégica</span>
+            <a class="btn" href="#contacto">Hablar</a>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- SECTORES -->
-    <section id="sectores" class="section" aria-label="Sectores">
+    <!-- EJECUCIÓN -->
+    <section id="ejecucion" class="section" aria-label="Servicios ejecutivos">
+      <div class="sectionHead">
+        <div>
+          <h2>Servicios ejecutivos</h2>
+          <p>Nosotros hacemos el trabajo (y tú tienes visibilidad y control).</p>
+        </div>
+      </div>
+
       <div class="twoCol">
-        <div class="panel">
-          <h2 style="margin:0 0 10px;">Sectores habituales</h2>
-          <p>Nos adaptamos al contexto, compliance y tono de cada organización.</p>
-          <div class="steps" aria-label="Sectores">
-            <div class="step"><div class="num">✓</div><div><b>Salud</b><p class="small" style="margin:2px 0 0; color:var(--muted);">Jornadas, formación, divulgación, congresos.</p></div></div>
-            <div class="step"><div class="num">✓</div><div><b>Corporativo</b><p class="small" style="margin:2px 0 0; color:var(--muted);">Convenciones, kick-offs, eventos internos.</p></div></div>
-            <div class="step"><div class="num">✓</div><div><b>Instituciones</b><p class="small" style="margin:2px 0 0; color:var(--muted);">Actos, jornadas, premios, mesas redondas.</p></div></div>
-            <div class="step"><div class="num">✓</div><div><b>Tech</b><p class="small" style="margin:2px 0 0; color:var(--muted);">Lanzamientos, meetups, demos, webinars.</p></div></div>
+        <div class="card panel">
+          <h3>Operación RRSS + Contenido</h3>
+          <p>Gestión de redes sociales, creación de contenido y ejecución de estrategia con consistencia.</p>
+          <div class="steps" aria-label="Operación">
+            <div class="step"><div class="num">1</div><div><b>Calendario</b><p class="small" style="margin:2px 0 0; color:var(--muted);">Pilares, formatos, frecuencia y producción.</p></div></div>
+            <div class="step"><div class="num">2</div><div><b>Producción</b><p class="small" style="margin:2px 0 0; color:var(--muted);">Copy, diseño, edición, publicación y community.</p></div></div>
+            <div class="step"><div class="num">3</div><div><b>Optimización</b><p class="small" style="margin:2px 0 0; color:var(--muted);">Iteración semanal según rendimiento.</p></div></div>
           </div>
         </div>
 
-        <div class="panel">
-          <h3>Tu evento, tu objetivo</h3>
-          <p>
-            ¿Captación? ¿Branding? ¿Formación? ¿Relación con partners? 
-            Ajustamos formato y KPIs para que el evento “devuelva” valor.
-          </p>
-          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn btnPrimary" href="#contacto">Cuéntame el objetivo</a>
-            <a class="btn" href="#casos">Ver casos</a>
+        <div class="card panel">
+          <h3>Growth 360 (con RRSS al centro)</h3>
+          <p>Plan SEO, campañas SEM/Ads, plan GEO y acciones de visibilidad alineadas al contenido.</p>
+          <div class="steps" aria-label="360">
+            <div class="step"><div class="num">✓</div><div><b>Plan SEO</b><p class="small" style="margin:2px 0 0; color:var(--muted);">Prioridades y contenidos que apoyan social.</p></div></div>
+            <div class="step"><div class="num">✓</div><div><b>Plan SEM / Ads</b><p class="small" style="margin:2px 0 0; color:var(--muted);">Creatividades + segmentación + medición.</p></div></div>
+            <div class="step"><div class="num">✓</div><div><b>Plan GEO</b><p class="small" style="margin:2px 0 0; color:var(--muted);">Presencia local y mejora de conversión.</p></div></div>
+            <div class="step"><div class="num">✓</div><div><b>Eventos / visibilidad</b><p class="small" style="margin:2px 0 0; color:var(--muted);">Planificación y difusión.</p></div></div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ENTREGABLES -->
+    <section id="entregables" class="section" aria-label="Entregables">
+      <div class="sectionHead">
+        <div>
+          <h2>Productos / entregables</h2>
+          <p>Lo que el cliente recibe (en formato claro y accionable).</p>
+        </div>
+      </div>
+
+      <div class="grid" role="list">
+        <article class="card service" role="listitem">
+          <div class="thumb" aria-hidden="true"></div>
+          <div class="content">
+            <div class="meta"><span class="tag">RRSS</span><span class="tag">Auditoría</span></div>
+            <h3 class="title">Auditoría de RRSS</h3>
+            <p class="desc">Diagnóstico, oportunidades, benchmarks y plan de mejora priorizado.</p>
+          </div>
+          <div class="cardFoot"><span class="small">Accionable</span><a class="btn btnPrimary" href="#contacto">Pedirla</a></div>
+        </article>
+
+        <article class="card service" role="listitem">
+          <div class="thumb" aria-hidden="true"></div>
+          <div class="content">
+            <div class="meta"><span class="tag">Contenido</span><span class="tag">Mensual</span></div>
+            <h3 class="title">Calendario de contenidos</h3>
+            <p class="desc">Piezas, guiones, copies, formatos, hooks y objetivos por publicación.</p>
+          </div>
+          <div class="cardFoot"><span class="small">Listo para producir</span><a class="btn" href="#contacto">Quiero esto</a></div>
+        </article>
+
+        <article class="card service" role="listitem">
+          <div class="thumb" aria-hidden="true"></div>
+          <div class="content">
+            <div class="meta"><span class="tag">Marca</span><span class="tag">RRSS</span></div>
+            <h3 class="title">Estrategia de marca en RRSS</h3>
+            <p class="desc">Narrativa, pilares, tono, series de contenido y sistema de publicación.</p>
+          </div>
+          <div class="cardFoot"><span class="small">Framework</span><a class="btn btnPrimary" href="#contacto">Diseñarla</a></div>
+        </article>
+
+        <article class="card service" role="listitem">
+          <div class="thumb" aria-hidden="true"></div>
+          <div class="content">
+            <div class="meta"><span class="tag">SEO</span><span class="tag">Trimestral</span></div>
+            <h3 class="title">Plan SEO</h3>
+            <p class="desc">Prioridades, contenidos, keywords, estructura y medición.</p>
+          </div>
+          <div class="cardFoot"><span class="small">Roadmap</span><a class="btn" href="#contacto">Solicitar</a></div>
+        </article>
+
+        <article class="card service" role="listitem">
+          <div class="thumb" aria-hidden="true"></div>
+          <div class="content">
+            <div class="meta"><span class="tag">Ads</span><span class="tag">Campañas</span></div>
+            <h3 class="title">Plan SEM / campañas</h3>
+            <p class="desc">Estrategia, creatividades, audiencias y optimización del gasto.</p>
+          </div>
+          <div class="cardFoot"><span class="small">Performance</span><a class="btn btnPrimary" href="#contacto">Activar</a></div>
+        </article>
+
+        <article class="card service" role="listitem">
+          <div class="thumb" aria-hidden="true"></div>
+          <div class="content">
+            <div class="meta"><span class="tag">GEO</span><span class="tag">Local</span></div>
+            <h3 class="title">Plan GEO</h3>
+            <p class="desc">Acciones para ganar visibilidad local y mejorar conversiones desde mapa.</p>
+          </div>
+          <div class="cardFoot"><span class="small">Local growth</span><a class="btn" href="#contacto">Quiero plan</a></div>
+        </article>
+      </div>
+
+      <div class="card panel" style="margin-top:14px;">
+        <h3>Informe de resultados y optimización</h3>
+        <p>Reporting con conclusiones + siguientes acciones (orientativo: <b>4h–6h</b> según alcance y fuentes de datos).</p>
       </div>
     </section>
 
@@ -517,11 +604,11 @@
       <div class="sectionHead">
         <div>
           <h2>Paquetes orientativos</h2>
-          <p>Para que tengas un marco rápido (se ajusta según alcance).</p>
+          <p>Para tener un marco rápido (se ajusta según alcance).</p>
         </div>
       </div>
 
-      <div class="panel">
+      <div class="card panel">
         <table aria-label="Tabla de paquetes">
           <thead>
             <tr>
@@ -532,126 +619,76 @@
           </thead>
           <tbody>
             <tr>
-              <td><b>Base</b></td>
-              <td>Evento pequeño / 30–80 asistentes</td>
-              <td>Planificación, coordinación, checklists, soporte en sala (sin técnica avanzada).</td>
+              <td><b>Social Strategy</b></td>
+              <td>Ordenar RRSS y crear un sistema</td>
+              <td>Auditoría + pilares + calendario + KPIs + sesión de dirección.</td>
             </tr>
             <tr>
-              <td><b>Pro</b></td>
-              <td>Jornadas / 80–250 asistentes</td>
-              <td>Producción completa, proveedores, registro/QR, señalética, coordinación on-site.</td>
+              <td><b>Social Ops</b></td>
+              <td>Publicar con consistencia y optimizar</td>
+              <td>Gestión RRSS + contenido + community + reporting mensual.</td>
             </tr>
             <tr>
-              <td><b>Híbrido</b></td>
-              <td>Presencial + streaming</td>
-              <td>Realización, sonido, iluminación, plataforma, grabación, soporte remoto y métricas.</td>
+              <td><b>Growth 360</b></td>
+              <td>Crecimiento integral (RRSS + apoyo)</td>
+              <td>RRSS + SEO + Ads/SEM + GEO + visibilidad + reporting y optimización.</td>
             </tr>
           </tbody>
         </table>
 
         <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn btnPrimary" href="#contacto">Pedir propuesta cerrada</a>
-          <a class="btn" href="#contacto">Comparar opciones</a>
+          <a class="cta" href="#contacto">Pedir propuesta cerrada</a>
+          <a class="ghost" href="#contacto">Comparar opciones</a>
         </div>
+
         <p class="small" style="margin:12px 0 0; color:var(--muted);">
-          Nota: esto es orientativo. El precio final depende de ciudad, venue, técnica, número de ponentes, y duración.
+          Nota: los precios dependen de volumen de contenido, canales, inversión publicitaria, alcance SEO/GEO y tiempos.
         </p>
       </div>
     </section>
 
-    <!-- CASOS -->
-    <section id="casos" class="section" aria-label="Casos de ejemplo">
-      <div class="sectionHead">
-        <div>
-          <h2>Casos (ejemplo)</h2>
-          <p>Textos de muestra que puedes sustituir por casos reales.</p>
-        </div>
-      </div>
-
-      <div class="grid" role="list">
-        <article class="card" role="listitem">
-          <div class="thumb" aria-hidden="true"></div>
-          <div class="content">
-            <div class="meta"><span class="tag">Institución</span><span class="tag">Jornada</span></div>
-            <h3 class="title">Jornada anual (200 asistentes)</h3>
-            <p class="desc">Registro + acreditación QR, coordinación de agenda y ponentes, y encuesta final (NPS).</p>
-          </div>
-          <div class="cardFoot">
-            <span class="small">Entrega: informe KPIs</span>
-            <a class="btn" href="#contacto">Quiero algo así</a>
-          </div>
-        </article>
-
-        <article class="card" role="listitem">
-          <div class="thumb" aria-hidden="true"></div>
-          <div class="content">
-            <div class="meta"><span class="tag">Empresa</span><span class="tag">Kick-off</span></div>
-            <h3 class="title">Kick-off interno (híbrido)</h3>
-            <p class="desc">Producción en sala + emisión privada para equipos remotos, grabación y highlights.</p>
-          </div>
-          <div class="cardFoot">
-            <span class="small">Control total</span>
-            <a class="btn btnPrimary" href="#contacto">Pedir propuesta</a>
-          </div>
-        </article>
-
-        <article class="card" role="listitem">
-          <div class="thumb" aria-hidden="true"></div>
-          <div class="content">
-            <div class="meta"><span class="tag">Tech</span><span class="tag">Webinar</span></div>
-            <h3 class="title">Ciclo de webinars (captación)</h3>
-            <p class="desc">Landing + automatización de emails + emisión + métricas de asistencia y leads.</p>
-          </div>
-          <div class="cardFoot">
-            <span class="small">Orientado a leads</span>
-            <a class="btn" href="#contacto">Me interesa</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
     <!-- FAQ -->
-    <section class="section" aria-label="Preguntas frecuentes">
+    <section id="faq" class="section" aria-label="Preguntas frecuentes">
       <div class="sectionHead">
         <div>
           <h2>FAQ</h2>
-          <p>Lo que suelen preguntar las organizaciones.</p>
+          <p>Lo típico que se pregunta antes de empezar.</p>
         </div>
       </div>
 
       <details>
-        <summary>¿Con cuánta antelación recomendáis planificar?</summary>
-        <p>Depende del tamaño: pequeño (2–4 semanas), medio (4–8), grande (8–12+). Podemos hacerlo “fast-track” si hay urgencia.</p>
+        <summary>¿Trabajáis solo RRSS o también 360?</summary>
+        <p>RRSS es la pata principal. Si el proyecto lo pide, conectamos SEO, Ads/SEM, GEO y acciones de visibilidad para acelerar resultados.</p>
       </details>
 
       <details>
-        <summary>¿Podéis trabajar con nuestros proveedores?</summary>
-        <p>Sí. Nos integramos con proveedores internos o externos y nos encargamos de coordinación y control de calidad.</p>
+        <summary>¿Cómo medís si funciona?</summary>
+        <p>Definimos KPIs por objetivo (alcance útil, engagement, leads, ventas, CAC/CPA, etc.) y entregamos reporting con decisiones: qué escalar y qué cortar.</p>
       </details>
 
       <details>
-        <summary>¿Qué entregables incluís?</summary>
-        <p>Timeline, checklist, guion técnico, plan de riesgos, y post-evento: reporte de KPIs + recomendaciones.</p>
+        <summary>¿Podéis adaptaros a nuestro equipo interno?</summary>
+        <p>Sí: podemos dirigir y que ejecutéis vosotros, ejecutar nosotros, o un modelo mixto con revisiones y aprobaciones.</p>
       </details>
 
       <details>
-        <summary>¿Podéis hacer eventos híbridos sin líos?</summary>
-        <p>Sí: definimos plataforma, pruebas técnicas, realización, contingencias y soporte durante la emisión.</p>
+        <summary>¿Qué necesitáis para empezar?</summary>
+        <p>Accesos (RRSS/ads/analytics), objetivos claros, oferta/servicios y un histórico mínimo para detectar patrones.</p>
       </details>
     </section>
 
     <!-- CONTACTO -->
-    <section id="contacto" class="section" aria-label="Contacto B2B">
+    <section id="contacto" class="section" aria-label="Contacto">
       <div class="twoCol">
-        <div class="panel">
+        <div class="card panel">
           <h2 style="margin:0 0 10px;">Pide propuesta</h2>
-          <p>Cuéntanos el objetivo y te respondemos con un enfoque + alcance + estimación.</p>
+          <p>Cuéntanos el objetivo y te devolvemos enfoque + alcance + estimación.</p>
 
           <form action="#" method="post" aria-label="Formulario de contacto">
             <div class="formRow">
               <div>
-                <label for="org">Organización</label>
-                <input id="org" name="org" type="text" placeholder="Nombre de la organización" required />
+                <label for="org">Empresa / marca</label>
+                <input id="org" name="org" type="text" placeholder="Nombre de la marca" required />
               </div>
               <div>
                 <label for="persona">Persona de contacto</label>
@@ -672,59 +709,60 @@
 
             <div class="formRow">
               <div>
-                <label for="tipo">Tipo de evento</label>
-                <select id="tipo" name="tipo" required>
+                <label for="servicio">Necesidad principal</label>
+                <select id="servicio" name="servicio" required>
                   <option value="">Selecciona</option>
-                  <option>Jornada / Congreso</option>
-                  <option>Formación / Taller</option>
-                  <option>Kick-off interno</option>
-                  <option>Lanzamiento</option>
-                  <option>Webinar / Online</option>
-                  <option>Híbrido</option>
+                  <option>RRSS (estrategia)</option>
+                  <option>RRSS (gestión + contenido)</option>
+                  <option>SEO</option>
+                  <option>Ads / SEM</option>
+                  <option>GEO / Local</option>
+                  <option>Eventos / visibilidad</option>
+                  <option>Growth 360</option>
                 </select>
               </div>
               <div>
-                <label for="fecha">Fecha aproximada</label>
-                <input id="fecha" name="fecha" type="text" placeholder="Ej: abril 2026" />
+                <label for="plazo">Plazo</label>
+                <input id="plazo" name="plazo" type="text" placeholder="Ej: abril 2026" />
               </div>
             </div>
 
             <div class="formRow">
               <div>
-                <label for="ciudad">Ciudad / formato</label>
-                <input id="ciudad" name="ciudad" type="text" placeholder="Ej: Barcelona / híbrido" />
+                <label for="canales">Canales</label>
+                <input id="canales" name="canales" type="text" placeholder="Ej: Instagram, TikTok, LinkedIn" />
               </div>
               <div>
-                <label for="aforo">Aforo estimado</label>
-                <input id="aforo" name="aforo" type="text" placeholder="Ej: 150" />
+                <label for="objetivo">Objetivo</label>
+                <input id="objetivo" name="objetivo" type="text" placeholder="Ej: leads, ventas, marca..." />
               </div>
             </div>
 
             <div>
-              <label for="mensaje">Objetivo y detalles</label>
-              <textarea id="mensaje" name="mensaje" placeholder="Objetivo del evento, público, duración, necesidades técnicas, etc." required></textarea>
+              <label for="mensaje">Contexto y detalles</label>
+              <textarea id="mensaje" name="mensaje" placeholder="Qué vendes, público, ticket, qué has probado, presupuesto aproximado, etc." required></textarea>
             </div>
 
-            <button class="btn btnPrimary" type="submit">Enviar solicitud</button>
+            <button class="cta" type="submit">Enviar solicitud</button>
             <p class="small" style="margin:0; color:var(--muted);">
               *Maqueta: conecta este formulario a tu backend o a un servicio (Formspree, Netlify Forms, etc.).
             </p>
           </form>
         </div>
 
-        <div class="panel">
+        <div class="card panel">
           <h3>Qué te devolveremos</h3>
           <div class="steps" aria-label="Respuesta">
-            <div class="step"><div class="num">1</div><div><b>Enfoque</b><p class="small" style="margin:2px 0 0; color:var(--muted);">Formato, experiencia y agenda sugerida.</p></div></div>
-            <div class="step"><div class="num">2</div><div><b>Alcance</b><p class="small" style="margin:2px 0 0; color:var(--muted);">Qué incluye y qué no, por módulos.</p></div></div>
-            <div class="step"><div class="num">3</div><div><b>Estimación</b><p class="small" style="margin:2px 0 0; color:var(--muted);">Coste y calendario realista.</p></div></div>
+            <div class="step"><div class="num">1</div><div><b>Enfoque</b><p class="small" style="margin:2px 0 0; color:var(--muted);">Estrategia y prioridades (qué mover primero).</p></div></div>
+            <div class="step"><div class="num">2</div><div><b>Alcance</b><p class="small" style="margin:2px 0 0; color:var(--muted);">Módulos claros: RRSS / SEO / Ads / GEO / visibilidad.</p></div></div>
+            <div class="step"><div class="num">3</div><div><b>Estimación</b><p class="small" style="margin:2px 0 0; color:var(--muted);">Coste, calendario y entregables.</p></div></div>
           </div>
 
           <div class="badge" style="margin-top:12px;">
             <span class="dot" aria-hidden="true"></span>
             <div>
               <b>Tip para convertir más</b>
-              <p>Si añades testimonios reales + logos de clientes + 3 casos con métricas, esta landing despega.</p>
+              <p>Cuando tengáis 2–3 casos reales con métricas (antes/después), esta landing rinde el doble.</p>
             </div>
           </div>
 
@@ -741,9 +779,9 @@
       <div class="foot">
         <div class="brand" style="gap:10px;">
           <span class="logo" aria-hidden="true"></span>
-          <span class="small">© 2026 EVENTOS</span>
+          <span class="small">© 2026 Agencia de crecimiento digital</span>
         </div>
-        <div class="small">
+        <div class="small" style="display:flex; gap:10px; flex-wrap:wrap;">
           <a href="#inicio" class="btn" style="text-decoration:none;">Subir</a>
           <a href="#servicios" class="btn" style="text-decoration:none;">Servicios</a>
           <a href="#contacto" class="btn" style="text-decoration:none;">Contacto</a>
@@ -753,3 +791,4 @@
   </div>
 </body>
 </html>
+```
